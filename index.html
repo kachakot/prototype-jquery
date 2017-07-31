@@ -1,0 +1,102 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Hello</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!--         <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css"> -->
+    </head>
+    <body>
+        <div class="container">
+            <div class="page-header">
+                <h1>Prototype &amp; jQuery Excercise</h1>
+            </div>
+            <p class="lead">
+                In this excercise you need to make <a href="https://jquery.com">jQuery</a> working on the same page with <a href="http://prototypejs.org/">prototype</a>.
+            </p>
+            <h2>Things to do:</h2>
+            <ol>
+                <li>Make script from <strong>main.js</strong> working (it needs to add class to the body element).</li>
+                <li>You can wrap the code, add something before and something after but you can't change the line:
+                <pre><code>$('body').addClass('jquery-is-working')</code></pre></li>
+                <li>Second part of the task is to make mark.js plugin working, HTML is already added, mark.js is also added (plugins.js), you must initialise the script in main.js</li>
+                <li>Mark.js script should work like here: https://jsfiddle.net/julmot/vpav6tL1/</li>
+                <li>Of course you can't remove prototype.js, the clicking script below needs to work.</li>
+            </ol>
+            <hr />
+            <h2>Prototype Section</h2>
+            <p>
+                Click on items below to change its contents.
+            </p>
+            <div id="items">
+                <ul>
+                    <li>lorem</li>
+                    <li>ipsum</li>
+                    <li>dolor</li>
+                </ul>
+            </div>
+            <button class="btn btn-default" type="submit" id="reset-button">Reset</button>
+            <hr />
+            <h2>jQuery Section</h2>
+            <h3><a href="https://markjs.io/" target="_blank">mark.js</a> example with jQuery</h3>
+
+<div class="panel panel-default">
+  <div class="panel-heading">Search</div>
+  <div class="panel-body">
+    <div class="search row">
+      <div class="col-xs-6">
+        <span>Type in a keyword:</span>
+        <input type="text" name="keyword" class="form-control input-sm" placeholder="Lorem ipsum...">
+      </div>
+      <div class="col-xs-6">
+        <span>Search options:</span>
+        <input type="checkbox" name="opt[]" value="separateWordSearch" checked> separate word search
+        <br>
+        <input type="checkbox" name="opt[]" value="diacritics" checked> diacritics
+        <br>
+        <input type="checkbox" name="opt[]" value="debug"> debug
+        <br>
+        <span>There are a lot more <a target="_blank" href="https://markjs.io/configurator.html">options</a>!</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="panel panel-default">
+  <div class="panel-body context">
+    <p>
+      Lorem ipsum dolor sit āmet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, nò sea takimata
+      sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+      rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+      At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie çonsequat, vel illum dolore
+      eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit prāesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet,
+    </p>
+  </div>
+</div>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prototype/1.7.3/prototype.min.js"></script>
+        <script>
+            function changeTargetText (target) {
+                target.innerHTML = 'Has been clicked!'
+            }
+            $('items').observe('click', (event) => {
+              if (event.target.tagName === 'LI') {
+                changeTargetText(event.target)
+              }
+            })
+            $('reset-button').observe('click', () => window.location.reload())
+        </script>
+        <script
+          src="https://code.jquery.com/jquery-2.2.4.min.js"
+          integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+          crossorigin="anonymous"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
